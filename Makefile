@@ -10,10 +10,13 @@ clippy:
 	cd libs && cargo clippy --tests -- -D warnings -A clippy::uninlined-format-args
 	cd tools/sdk-cli && cargo clippy -- -D warnings
 
-codegen: flutter-codegen react-native-codegen
+codegen: flutter-codegen react-native-codegen wasm-codegen
 
 flutter-codegen:
 	make -C ./libs/sdk-flutter flutter_rust_bridge
 
 react-native-codegen:
 	make -C ./libs/sdk-react-native react-native-codegen
+
+wasm-codegen:
+	make -C ./libs/sdk-wasm wasm-codegen

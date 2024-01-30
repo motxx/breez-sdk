@@ -9,6 +9,7 @@ rpath = true
 members = [
   "sdk-core",
   "sdk-bindings",
+  "sdk-wasm",
 ]
 resolver = "2"
 

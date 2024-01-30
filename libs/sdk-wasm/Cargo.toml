@@ -1,0 +1,38 @@
+[package]
+name = "breez_sdk_wasm"
+edition = "2021"
+version.workspace = true
+
+[[bin]]
+name = "wasm-bindgen"
+path = "wasm-bindgen.rs"
+
+[lib]
+name = "breez_sdk_wasm_bindings"
+crate-type = ["staticlib", "cdylib", "lib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+breez-sdk-core = { path = "../sdk-core" }
+bitcoin = "0.29.2"
+gl-client = { git = "https://github.com/Blockstream/greenlight.git", features = [
+    "permissive",
+], rev = "556eedf47a837b71c4277ba6ee84322f5cbd80de" }
+anyhow = { version = "1.0", features = ["backtrace"] }
+thiserror = "1.0"
+tokio = { version = "1", features = ["full"] }
+lightning-invoice = "*"
+once_cell = "*"
+serde = { version = "1.0", features = ["derive"] }
+strum_macros = "0.25"
+tonic = { version = "^0.8", features = [
+    "tls",
+    "tls-roots",
+    "tls-webpki-roots",
+] }
+futures = "0.3.28"
+wasm-bindgen = "0.2.74"
+
+[build-dependencies]
+anyhow = { version = "1.0", features = ["backtrace"] }

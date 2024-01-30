@@ -582,6 +582,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "breez_sdk_wasm"
+version = "0.2.12"
+dependencies = [
+ "anyhow",
+ "bitcoin 0.29.2",
+ "breez-sdk-core",
+ "futures",
+ "gl-client",
+ "lightning-invoice 0.23.0",
+ "once_cell",
+ "serde",
+ "strum_macros",
+ "thiserror",
+ "tokio",
+ "tonic",
+ "wasm-bindgen",
+]
+
+[[package]]
 name = "build-target"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
